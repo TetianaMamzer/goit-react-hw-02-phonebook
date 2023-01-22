@@ -18,7 +18,7 @@ const PhoneBookList = ({ contacts, type, text, onClick }) => (
 PhoneBookList.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired,
+    number: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired
   })),
   text: PropTypes.string.isRequired,

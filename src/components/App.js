@@ -75,15 +75,15 @@ class App extends Component {
     const visiblePhoneList = contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter))
     
     return (
-      <Conteiner title={'Phonebook'}>
+      <Conteiner title='Phonebook'>
         <Form onSubmit={this.formSubmit} />
         {contacts.length > 0 && (
           <>
             <Filter value={filter} onChange={this.changeFilter}/>
             <PhoneBookList
               contacts={visiblePhoneList}
-              type={'button'}
-              text={'delete'}
+              type='button'
+              text='delete'
               onClick={this.deleteList}
             />
           </>
