@@ -67,8 +67,18 @@ class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== idx )
     }))
   }
-  
-  
+  componentDidMount() {
+      const bookList = JSON.parse(localStorage.getItem('phoneBook'));
+      if(bookList) {
+        this.setState({ contacts: bookList})
+      }
+  }
+  componentDidUpdate(prevProps, prevState) {
+
+    if(this.state.contacts !== prevState) {
+      localStorage.setItem('phoneBook', JSON.stringify(this.state.contacts))
+    }
+  }
   render() {
     const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
